@@ -9,6 +9,7 @@ Self-study course for new users of VAMDC
 
    first-steps-with-portal
    other-portal-features
+   extracting-data-tables
    spectcol
    specview
    taverna
