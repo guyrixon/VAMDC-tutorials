@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Service xmlns="http://www.ivoa.net/xml/Parameter/v0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/Parameter/v0.1 PDL-V1.0.xsd">
+    <ServiceId>http://pdl-calc2.obspm.fr:8081/vamdc/OnlineCode</ServiceId>
+    <ServiceName>A prototype for VAMDC collisions</ServiceName>
+    <Description>A prototype for VAMDC collisions</Description>
+    <Parameters>
+        <parameter dependency="required">
+            <Name>mail</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>SKOS_MAIL</SkossConcept>
+            <Unit>none</Unit>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>AtomSymbol</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Atom Symbol</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>MassNumberMin</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Lower bound of mass number</SkossConcept>
+            <Unit>UA</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>MassNumberMax</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Higher bound of mass number</SkossConcept>
+            <Unit>UA</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>NuclearChargeMin</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Lower bound of nuclear charge</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>NuclearChargeMax</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Higher bound of nuclear charge</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>IonChargeMin</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Lower bound of ion charge</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>IonChargeMax</Name>
+            <ParameterType>integer</ParameterType>
+            <SkossConcept>Higher bound of ion charge</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>InChIKey</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>InChIKey for atom</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>StateEnergyMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound of state energy</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>StateEnergyMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound of state energy</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>ParticleName</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Particle Name</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>ChemicalName</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Chemical Name of the molecule</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>StoichiometricFormula</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Stoichiometric formula for molecule</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>StructuralFormula</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Structural formula for molecule</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>SpinIsomer</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Spin Isomer for molecule</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>StandardInChIKey</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>Standard InChIKey for molecule</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>WaveLengthMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound on wavelengt</SkossConcept>
+            <Unit>A</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>WaveLengthMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound on wavelengt</SkossConcept>
+            <Unit>A</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>UpperStateEnergyMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound on energy for the upper level</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>UpperStateEnergyMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound on energy for the upper level</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>LowerStateEnergyMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound on energy for the lower level</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>LowerStateEnergyMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound on energy for the lower level</SkossConcept>
+            <Unit>cm^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>ProbabilityAMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound for the Einstein coefficient for spontaneous radiative de-excitation (emission).</SkossConcept>
+            <Unit>s^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>ProbabilityAMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound for the Einstein coefficient for spontaneous radiative de-excitation (emission).</SkossConcept>
+            <Unit>s^(-1)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>TemperatureMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound for the environment temperature.</SkossConcept>
+            <Unit>k</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>TemperatureMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound for the environment temperature.</SkossConcept>
+            <Unit>k</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>NumberDensityMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound for the the total number density of particles comprising an Environment</SkossConcept>
+            <Unit>cm^(-3)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>NumberDensityMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound for the the total number density of particles comprising an Environment</SkossConcept>
+            <Unit>cm^(-3)</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>PressureMin</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Lower bound for the environment pressure</SkossConcept>
+            <Unit>Pa</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="optional">
+            <Name>PressureMax</Name>
+            <ParameterType>real</ParameterType>
+            <SkossConcept>Higher bound for the environment pressure</SkossConcept>
+            <Unit>Pa</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+        <parameter dependency="required">
+            <Name>fileResult</Name>
+            <ParameterType>string</ParameterType>
+            <SkossConcept>url to the tar file containing the xsams files</SkossConcept>
+            <Unit>None</Unit>
+            <Precision xsi:type="AtomicConstantExpression" ConstantType="real">
+                <Constant>0.0</Constant>
+            </Precision>
+            <Dimension xsi:type="AtomicConstantExpression" ConstantType="integer">
+                <Constant>1</Constant>
+            </Dimension>
+        </parameter>
+    </Parameters>
+    <Inputs>
+        <Name>inputs</Name>
+        <ParameterRef ParameterName="mail"/>
+        <ParameterGroup>
+            <Name>AtomsDetail</Name>
+            <ParameterRef ParameterName="AtomSymbol"/>
+            <ParameterRef ParameterName="MassNumberMin"/>
+            <ParameterRef ParameterName="MassNumberMax"/>
+            <ParameterRef ParameterName="NuclearChargeMin"/>
+            <ParameterRef ParameterName="NuclearChargeMax"/>
+            <ParameterRef ParameterName="IonChargeMin"/>
+            <ParameterRef ParameterName="IonChargeMax"/>
+            <ParameterRef ParameterName="InChIKey"/>
+            <ParameterRef ParameterName="StateEnergyMin"/>
+            <ParameterRef ParameterName="StateEnergyMax"/>
+        </ParameterGroup>
+        <ParameterGroup>
+            <Name>MoleculesDetail</Name>
+            <ParameterRef ParameterName="ChemicalName"/>
+            <ParameterRef ParameterName="StoichiometricFormula"/>
+            <ParameterRef ParameterName="StructuralFormula"/>
+            <ParameterRef ParameterName="SpinIsomer"/>
+            <ParameterRef ParameterName="StandardInChIKey"/>
+        </ParameterGroup>
+        <ParameterGroup>
+            <Name>ParticleDetail</Name>
+            <ParameterRef ParameterName="ParticleName"/>
+        </ParameterGroup>
+        <ParameterGroup>
+            <Name>RadiativeConditions</Name>
+            <ParameterRef ParameterName="WaveLengthMin"/>
+            <ParameterRef ParameterName="WaveLengthMax"/>
+            <ParameterRef ParameterName="UpperStateEnergyMin"/>
+            <ParameterRef ParameterName="UpperStateEnergyMax"/>
+            <ParameterRef ParameterName="LowerStateEnergyMin"/>
+            <ParameterRef ParameterName="LowerStateEnergyMax"/>
+            <ParameterRef ParameterName="ProbabilityAMin"/>
+            <ParameterRef ParameterName="ProbabilityAMax"/>
+        </ParameterGroup>
+        <ParameterGroup>
+            <Name>ThermalConditions</Name>
+            <ParameterRef ParameterName="TemperatureMin"/>
+            <ParameterRef ParameterName="TemperatureMax"/>
+            <ParameterRef ParameterName="NumberDensityMin"/>
+            <ParameterRef ParameterName="NumberDensityMax"/>
+            <ParameterRef ParameterName="PressureMin"/>
+            <ParameterRef ParameterName="PressureMax"/>
+        </ParameterGroup>
+    </Inputs>
+    <Outputs>
+        <Name>outputs</Name>
+        <ParameterRef ParameterName="fileResult"/>
+    </Outputs>
+</Service>

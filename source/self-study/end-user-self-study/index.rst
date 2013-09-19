@@ -8,14 +8,13 @@ Self-study course for new users of VAMDC
    :maxdepth: 2
 
    first-steps-with-portal
-   other-portal-features
    extracting-data-tables
    spectcol
    specview
-   taverna
+   pdl
+   xsams-validator
    python-scripting
-   toolsmithing-in-java
-   reporting-problems
+   java-programming
 
 This tutorial is for scientists intending to use VAMDC data in their own research, and it consists in a series of exercises. In each exercise, there is an introduction, some tasks for you to perform on the VAMDC system and notes on the expected results.
 
