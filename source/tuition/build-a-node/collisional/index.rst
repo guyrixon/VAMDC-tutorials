@@ -15,7 +15,6 @@ They "wire up" just enough of the data to get the single collision to come out i
 * :download:`models.py <models.py>`
 * :download:`dictionaries.py <dictionaries.py>`
 * :download:`queryfunc.py <queryfunc.py>`
-* :download:`settings.py <http:/tbd/>`
 
 
 Recommended order of demonstration
