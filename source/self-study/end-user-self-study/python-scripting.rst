@@ -3,6 +3,9 @@
 Python Scripting 
 ========================
 
+.. note::
+	Before we start, let it be said that while automatic and repeated requests are a valid application of the tools described below, it might be considered impolite to carry things too far. Queries can take considerable computational resources to run, which should be kept in mind when scripting queries. Not sending parallel queries to the same node or introducing a short delay might be worth considering.
+
 Sending a query to a single node
 -----------------------------------
 
@@ -48,11 +51,13 @@ meaning that the 5288 radiative transitions over 1272 states in 6 atoms for this
 
 GET request
 ~~~~~~~~~~~~~~~
-Running the request goes like::
+Running the GET request goes similar to above::
 
 	response = requests.get('http://node.url/tap/sync', params=PARAMETERS)
 
-``response.text`` is the actual XML payload.
+Now ``response.text`` is the actual XML payload. (Note that a data node may
+chose to return the statistics headers *only* for a HEAD request; they might be
+missing in ``response.headers`` this time.)
 
 To simply save the requested data to a file, do::
 
@@ -62,11 +67,56 @@ To simply save the requested data to a file, do::
 Handling the returned data
 ------------------------------
 
+Once you have a valid ``response``, the way to proceed very much depends on you
+goal. One can use an XML library to parse the document, e.g. *lxml*::
+
+	from lxml import etree as E
+	tree = E.fromstring(response.text.replace('xmlns=','xmlns:foo='))
+	
+Here we deactivate the namespace by replacing the declaration in the header, before we let lxml parse the string; this lets us skip using the tags' namespace prefix in the following.
+
+The ``tree`` object is a hierarchical structure of elements and their attributes which can be used to extract or transform data. For example, let's assume you are interested in the wavelengths of radiative transitions, which reside in an element *<Wavelength>*. To extract all these from the tree::
+
+	w_list=tree.findall('.//Wavelength')
+	for w in w_list:
+		val = w.find('Value')
+		print val.text, val.get('units') 
+
+which should yield output like::
+
+	234.11800000 A
+	234.11801889 A
+	235.18900000 A
+
+Note that we needed some knowledge of the XSAMS schema here, namely that the value for the wavelength is inside a *<Value>* element which has an attribute for the unit.
+
+The full documentation for *lxml* is available at http://lxml.de/ and going further into it is beyond the scope of this document.
+
+There are other ways of treating XML in Python, one more example being *xmltodict* (https://github.com/martinblech/xmltodict), a module that parses the XML into native Python dictionaries.
+
+
 Send data to a Processor
 ------------------------------
 
+Instead of treating the XML output yourself, one can let a *Processor Service* do something with the data first. 
+
 Use the registry to find data nodes
 -------------------------------------
+
+http://registry.vamdc.eu/
+
+foo bar::
+
+"""declare namespace ri='http://www.ivoa.net/xml/RegistryInterface/v1.0';
+<nodes>
+{
+   for $x in //ri:Resource
+   where $x/capability[@standardID='ivo://vamdc/std/VAMDC-TAP']
+   and $x/@status='active'
+   and $x/capability[@standardID='ivo://vamdc/std/VAMDC-TAP']/versionOfStandard$
+   return  <node><title>{$x/title/text()}</title><url>{$x/capability[@standardI
+   }
+	       </nodes>"""
 
 
 Further examples
