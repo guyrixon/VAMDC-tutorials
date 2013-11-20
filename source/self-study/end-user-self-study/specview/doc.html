@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title>Specview tutorial</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="specview-tutorial">
+<h1 class="title">Specview tutorial</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#what-is-specview" id="id1">1&nbsp;&nbsp;&nbsp;What is Specview ?</a><ul class="auto-toc">
+<li><a class="reference internal" href="#presentation" id="id2">1.1&nbsp;&nbsp;&nbsp;Presentation</a></li>
+<li><a class="reference internal" href="#installation" id="id3">1.2&nbsp;&nbsp;&nbsp;Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-specview" id="id4">2&nbsp;&nbsp;&nbsp;Using Specview</a><ul class="auto-toc">
+<li><a class="reference internal" href="#tutorial-description" id="id5">2.1&nbsp;&nbsp;&nbsp;Tutorial description</a></li>
+<li><a class="reference internal" href="#looking-for-a-spectrum-using-simple-spectra-access-ssa" id="id6">2.2&nbsp;&nbsp;&nbsp;Looking for a spectrum using Simple Spectra Access (SSA)</a></li>
+<li><a class="reference internal" href="#looking-for-available-lines" id="id7">2.3&nbsp;&nbsp;&nbsp;Looking for available lines</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-simple-application-messaging-protocol-in-specview" id="id8">3&nbsp;&nbsp;&nbsp;Using Simple Application Messaging Protocol in Specview</a><ul class="auto-toc">
+<li><a class="reference internal" href="#what-is-samp" id="id9">3.1&nbsp;&nbsp;&nbsp;What is Samp</a></li>
+<li><a class="reference internal" href="#using-samp-in-specview" id="id10">3.2&nbsp;&nbsp;&nbsp;Using Samp in Specview</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-is-specview">
+<h1><a class="toc-backref" href="#id1">1&nbsp;&nbsp;&nbsp;What is Specview ?</a></h1>
+<div class="section" id="presentation">
+<h2><a class="toc-backref" href="#id2">1.1&nbsp;&nbsp;&nbsp;Presentation</a></h2>
+<p>Specview is a tool for 1-D spectral visualization and analysis of astronomical spectra.
+It is written in Java thus can be run anywhere Java is supported.
+Specview is capable of reading all the Hubble Space Telescope spectral data formats, as well as data from several other instruments (such as IUE, FUSE, ISO, FORS and SDSS),
+preview spectra from MAST, and data from generic FITS and ASCII tables.
+It can also read data from Virtual Observatory servers, and read and write spectrogram data in Virtual Observatory SED format.
+It can also read files in the SPC Galactic format used in the chemistry field.</p>
+<p>The complete list of supported spectra is available <a class="reference external" href="http://specview.stsci.edu/javahelp/Ingest.html#Supported_file_formats">here</a></p>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id3">1.2&nbsp;&nbsp;&nbsp;Installation</a></h2>
+<p>The application is available for the following operating systems :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://specview.stsci.edu/download/spv_macos_2_17_4.dmg">OSX</a></li>
+<li><a class="reference external" href="http://specview.stsci.edu/download/spv_unix_2_17_4.sh">Linux/Unix</a></li>
+<li><a class="reference external" href="http://specview.stsci.edu/download/spv_windows_2_17_4.exe">Windows</a></li>
+</ul>
+<p>Once you have downloaded and installed the application, launch it and the main window will appear :</p>
+<img alt="images/main_frame.png" src="images/main_frame.png" />
+<p>A network connection is required for the following tutorial to work.</p>
+</div>
+</div>
+<div class="section" id="using-specview">
+<h1><a class="toc-backref" href="#id4">2&nbsp;&nbsp;&nbsp;Using Specview</a></h1>
+<div class="section" id="tutorial-description">
+<h2><a class="toc-backref" href="#id5">2.1&nbsp;&nbsp;&nbsp;Tutorial description</a></h2>
+<p>In this tutorial, we will learn how to identify lines in Specview using the VAMDC infrastructure.
+The example is about the identification of absorption lines produced by diffuse interstellar clouds on the line of sight towards a bright Be Star.</p>
+</div>
+<div class="section" id="looking-for-a-spectrum-using-simple-spectra-access-ssa">
+<h2><a class="toc-backref" href="#id6">2.2&nbsp;&nbsp;&nbsp;Looking for a spectrum using Simple Spectra Access (SSA)</a></h2>
+<p>Open the File-&gt; Read for VO Menu.</p>
+<p>Look for <a class="reference external" href="http://archive.stsci.edu/fuse/">FUSE</a> spectra available for HD 110432 (use the service providing UV and EUV data), find and open the spectrum.
+You will have to use the name resolver to find the object position (either the <a class="reference external" href="http://simbad.u-strasbg.fr/simbad/">SIMBAD</a> CADC or ESO one).</p>
+<p>There are 2 FUSE services, we will look for data into thone whose description is &quot;Far Ultraviolet Spectroscopic Explorer (#EUV#UV#)&quot;
+There should be only one available spectrum, below is the result you should get :</p>
+<img alt="images/fuse_spectrum.png" src="images/fuse_spectrum.png" />
+</div>
+<div class="section" id="looking-for-available-lines">
+<h2><a class="toc-backref" href="#id7">2.3&nbsp;&nbsp;&nbsp;Looking for available lines</a></h2>
+<p>Once the spectrum has been loaded, zoom on the area between 1073 and 1083 Angstroms. We will work on 2 H2 absorption lines whose positions are 1074.3 and 1081.26 Angstroms respectively.</p>
+<p>Click the &quot;Line IDs&quot; button to open the search interface.
+Here there you can either look for data in local files contained in a Specview directory. Or you can
+search in databases that implemented <a class="reference external" href="http://www.vamdc.eu/documents/standards/#data-access-protocol-query-language-and-dictionaries">VAMDC standards</a> to expose their data.</p>
+<p>We will only use VAMDC data in this tutorial so you can deselect the &quot;Use local&quot; checkbox.</p>
+<img alt="images/line_gui.png" src="images/line_gui.png" />
+<p>You must now configure the data sources in which you want to look for data. Click on the configuration button in the upper left corner of the window.</p>
+<p>Here you will find a complete list of all the databases available in the VAMDC architecture.
+We are studying a FUSE spectrum showing strong H2 absorption lines in the far UV due to a diffuse interstellar cloud between the star HD 110432 and us.
+So we want to select a database containing H2 lines in the far UV. Sesam provides these lines.
+Select the database called &quot;Spectroscopy of Atoms and Molecules&quot; (<a class="reference external" href="http://sesam.obspm.fr">Sesam</a>).
+The choice you have made in this window will be saved so the next time you launch Specview, you won't have to configure it again.</p>
+<p>Look for data available for H2 with a wavelength between 1073 and 1075 Angstroms.There are a lot of available lines in this interval.</p>
+<img alt="images/lines.png" src="images/lines.png" />
+<p>However it is possible to get something more precise by specifying a value for the lower level energy.
+In diffuse interstellar clouds, excepted on specific conditions, the temperature is relatively cool (60 K) so most of the H2 is in its first ro-vibrationnal levels.
+We are going to select only line from levels lower or equal to v=0 J=7. We can restrict our research to a temperature below 6000K, which leads to a lower level energy between 0 and 4000 cm-1.</p>
+<p>Do the same request with a lower level energy comprised in this interval.</p>
+<img alt="images/lines_1074_withlowerenergy.png" src="images/lines_1074_withlowerenergy.png" />
+<p>Now the lines we were looking for are way easier to find. Most of the lines we found in Sesam corresponds exactly to absorption lines on the spectrum.
+You can notice a total absorption between 1076.9 and 1077.7 Angstroms and between 1078.84 and 1079.2 Angstroms indicating that numerous transitions occurs at those wavelength.</p>
+<p>The information concerning the quantum numbers of the levels are not yet available in Specview. But you can look for those transitions on the <a class="reference external" href="http://sesam.obspm.fr">Sesam website</a>.</p>
+<p>Once everything has been plotted, you should get the following spectrum :</p>
+<img alt="images/result_hd110432.png" src="images/result_hd110432.png" />
+<p>Here is the list of identified levels :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="27%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Lower Level</th>
+<th class="head">Upper Level</th>
+<th class="head">Wavelength (Angstroms)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>X v=0 J=4</td>
+<td>B v=3 J=3</td>
+<td>1074.31</td>
+</tr>
+<tr><td>X v=0 J=5</td>
+<td>B v=3 J=6</td>
+<td>1075.24</td>
+</tr>
+<tr><td>X v=0 J=0</td>
+<td>B v=2 J=1</td>
+<td>1077.14</td>
+</tr>
+<tr><td>X v=0 J=1</td>
+<td>B v=2 J=2</td>
+<td>1077.70</td>
+</tr>
+<tr><td>X v=0 J=1</td>
+<td>B v=2 J=0</td>
+<td>1078.92</td>
+</tr>
+<tr><td>X v=0 J=2</td>
+<td>B v=2 J=3</td>
+<td>1079.22</td>
+</tr>
+<tr><td>X v=0 J=2</td>
+<td>B v=2 J=1</td>
+<td>1081.26</td>
+</tr>
+<tr><td>X v=0 J=3</td>
+<td>B v=2 J=4</td>
+<td>1081.71</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="using-simple-application-messaging-protocol-in-specview">
+<h1><a class="toc-backref" href="#id8">3&nbsp;&nbsp;&nbsp;Using Simple Application Messaging Protocol in Specview</a></h1>
+<div class="section" id="what-is-samp">
+<h2><a class="toc-backref" href="#id9">3.1&nbsp;&nbsp;&nbsp;What is Samp</a></h2>
+<p>SAMP, the Simple Application Messaging Protocol, is a standard for allowing software tools to exchange control and data information,
+thus facilitating tool interoperability, and so allowing users to treat separately developed applications as an integrated suite.
+An example of an operation that SAMP might facilitate is passing a source catalogue from one GUI application to another,
+and subsequently allowing sources marked by the user in one of those applications to be visible as such in the other.</p>
+<p>To exchange data between applications with Samp, a hub is required. A hub is a process that will listen to Samp messages sent by all the Samp enabled applications
+and redirect them to the correct target.</p>
+</div>
+<div class="section" id="using-samp-in-specview">
+<h2><a class="toc-backref" href="#id10">3.2&nbsp;&nbsp;&nbsp;Using Samp in Specview</a></h2>
+<p>During this tutorial we will look for a spectrum on a website and send it to Specview using the Samp protocol.
+The spectrum will be find on the <a class="reference external" href="http://lesia.obspm.fr/apis/">Auroral Planetary Imaging and Spectroscopy website</a> (APIS).
+This database contains various types of data derived from spectro-imaging auroral observations of the outer planets (Jupiter, Saturn and Uranus) acquired by the Hubble Space Telescope in the Far-UV.</p>
+<p>To look for data in the APIs database, a login and a password are necessary. They will be provided during the session.</p>
+<p>Click on &quot;Search for data&quot; and enter the login/password. You will arrive on this page :</p>
+<img alt="images/apis.png" src="images/apis.png" />
+<p>Here, look for available spectroscopic data for Jupiter. You will get a list of observations. For each one there will be either an image, that you can send to <a class="reference external" href="http://aladin.u-strasbg.fr/">Aladin</a> and a spectrum
+that you can send to Specview.</p>
+<p>When Specview is started, a Samp Hub is automatically launched if none is currently running. If there is already one, it will simply connect to it.</p>
+<p>Let's choose the following observation :</p>
+<ul class="simple">
+<li>Target : Jupiter</li>
+<li>Start date : 1997-07-04</li>
+<li>Start time : 09:31:47</li>
+<li>Int. time : 700.19613 s</li>
+<li>Instrument : HST / STIS</li>
+<li>Obs. type: SPECTROSCOPIC</li>
+<li>Grating / slit :  G140L / 52X0.5</li>
+<li>Dataset : o43ba2h4q</li>
+</ul>
+<p>Below is an example of how to interpret APIs 2D spectra for Saturn. The slit receives photons from all the planet diameter.
+We can see that Lyman alpha can be found everywhere. Then various other emission lines can be seen on the southern aurora.</p>
+<img alt="images/apis_saturne.png" src="images/apis_saturne.png" />
+<p>Click on &quot;Display with Specview&quot; under the original data. A message will ask you to authorize the connection, choose &quot;Yes&quot;.
+The following window will appear, asking you how to integrate the spectrum.
+5 about center means ± 5 lines from the center of the 2D spectrum y axis.
+1 and 1201 are the first and last lines along the y axis.</p>
+<img alt="images/apis_samp_window.png" src="images/apis_samp_window.png" />
+<p>Click on the &quot;Go&quot; button on the &quot;All lines&quot; line. You will get the following spectrum :</p>
+<img alt="images/apis_jupiter.png" src="images/apis_jupiter.png" />
+</div>
+</div>
+</div>
+</body>
+</html>
