@@ -1,23 +1,20 @@
-.. _end-user-self-study:
+.. VAMDC-tutorials documentation master file, created by
+   sphinx-quickstart on Sat Jul 20 17:48:51 2013.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-========================================
-Self-study course for new users of VAMDC
-========================================
+Self-paced study for end users
+==============================
+
+Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   first-steps-with-portal
-   extracting-data-tables
-   spectcol
-   specview
-   pdl
-   xsams-validator
-   python-scripting
-   java-programming
-
-This tutorial is for scientists intending to use VAMDC data in their own research, and it consists in a series of exercises. In each exercise, there is an introduction, some tasks for you to perform on the VAMDC system and notes on the expected results.
-
-Some exercises do not tell you exactly how to do each step: that information is in the VAMDC user guides which are separate documents. You should use the links from the exercise pages into the guides to find the details.
-
-You can work through the exercise at your own pace. Feel free to skip exercises that do not interest you. However, within a given exercise you should attempt all the tasks in order as some tasks depend on the results of previous tasks. 
+   portal/first-steps-with-portal
+   validator/xsams-validator
+   specview/doc
+   spectcol/spectcol.rst   
+   java-programming/programming.rst
+   python-scripting/python-scripting.rst
+   pdl/pdl.rst

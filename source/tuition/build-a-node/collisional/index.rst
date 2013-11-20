@@ -6,15 +6,15 @@ Materials
 
 This example uses some data from IDEDB, contributed by Johannes Postler. One collision is included. This example demonstrates a node constructed on an existing database [#]_. The data are provided as an SQL dump for MySQL [#]_.
 
-* :download:`Collision data <thud.sql>`
+* :download:`Collision data <thud/thud.sql>`
 
 
 The Python files were derived from the empty example-node in the node-software by Guy Rixon during the Innsbruck tutorial of early 2013 [#]_.
 They "wire up" just enough of the data to get the single collision to come out in XSAMS. This node is not complete and the software is not derived from the operational IDEADB node. The files suit the 12.07 version of the node software, which you need to download separately.  When you have that tree of software installed on the demonstration machine, you should copy the first three Python files from this page into the directory *NodeSoftware/nodes/thud/node/* [#]_. You then need to edit *NodeSoftware/nodes/thud/settings.py* to get a runnable node. I've included on this page a *settings.py* that should work if your RDBMS is MySQL, set up according to the infrastructure checklist elsewhere in this tutorial package.
 
-* :download:`models.py <models.py>`
-* :download:`dictionaries.py <dictionaries.py>`
-* :download:`queryfunc.py <queryfunc.py>`
+* :download:`models.py <thud/models.py>`
+* :download:`dictionaries.py <thud/dictionaries.py>`
+* :download:`queryfunc.py <thud/queryfunc.py>`
 
 
 Recommended order of demonstration
